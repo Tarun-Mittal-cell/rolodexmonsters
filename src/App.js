@@ -1,6 +1,6 @@
 import { Component } from 'react';
 
-import logo from './logo.svg';
+import CardList from './components/card-list/card-list.component';
 import './App.css';
 
   class App extends Component {
@@ -35,7 +35,7 @@ import './App.css';
     this.setState(() => {
       return { searchField };
     });
-  }
+  };
 
   render() {
     console.log('render');
@@ -48,20 +48,22 @@ import './App.css';
     });
 
     return ( 
-    <div className='App'>
-      <input className='search-box' 
-      type='search' 
-      placeholder='search monsters' 
-      onChange={onSearchChange}
-    />
-      {filteredMonsters.map((monster) => {
-          return ( 
-          <div key={monster.id}>
-            <h1>{monster.name}</h1>
-          </div>
-          );
-        })}
-    </div>
+      <div className='App'>
+        <input 
+        className='search-box' 
+        type='search' 
+        placeholder='search monsters' 
+        onChange={onSearchChange}
+      />
+        {/* {filteredMonsters.map((monster) => {
+            return ( 
+            <div key={monster.id}>
+              <h1>{monster.name}</h1>
+            </div>
+            );
+          })} */}
+          <CardList />
+      </div>
     );
   }
 }
