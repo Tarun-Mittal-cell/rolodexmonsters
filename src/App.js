@@ -50,19 +50,12 @@ import './App.css';
     return ( 
       <div className='App'>
         <input 
-        className='search-box' 
-        type='search' 
-        placeholder='search monsters' 
-        onChange={onSearchChange}
-      />
-        {/* {filteredMonsters.map((monster) => {
-            return ( 
-            <div key={monster.id}>
-              <h1>{monster.name}</h1>
-            </div>
-            );
-          })} */}
-          <CardList />
+          className='search-box' 
+          type='search' 
+          placeholder='search monsters' 
+          onChange={onSearchChange}
+        />
+        <CardList monsters={filteredMonsters}/>
       </div>
     );
   }
