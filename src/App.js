@@ -30,6 +30,13 @@ import './App.css';
     );
   }
 
+  onSearchChange = (event) => { 
+    const searchField = event.target.value.toLocaleLowerCase();
+    this.setState(() => {
+      return { searchField };
+    });
+  }
+
   render() {
     console.log('render');
 
@@ -42,15 +49,8 @@ import './App.css';
       <input className='search-box' 
       type='search' 
       placeholder='search monsters' 
-      onChange={(event) => { 
-        const searchField = event.target.value.toLocaleLowerCase();
-        this.setState(
-          () => {
-          return { searchField };
-        }
-      );
-    }} 
-  />
+      onChange={this.onSearchChange}
+    />
       {filteredMonsters.map((monster) => {
           return ( 
           <div key={monster.id}>
