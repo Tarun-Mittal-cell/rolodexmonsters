@@ -10,7 +10,7 @@ import './App.css';
 
       this.state = {
         monsters: [],
-        searchField: ''
+        searchField: '',
     };
   }
 
@@ -45,7 +45,7 @@ import './App.css';
     return ( 
       <div className='App'>
         <SearchBox
-          className='search-box'
+          className='monsters-search-box'
           onChangeHandler={onSearchChange} 
           placeholder='search monsters' 
         />
